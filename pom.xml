@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.smarting.price.tools</groupId>
 	<artifactId>price_tools</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>price_tools</name>
 	<description>price_tools</description>
 	<properties>

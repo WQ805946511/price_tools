@@ -208,7 +208,6 @@ public class QuoteInfoService {
     }
 
     private String getRegionCn(Map<String, List<Country>> countryMap, QuoteInfo quoteInfoMin) {
-       /* String region = quoteInfoMin.getRegion();*/
         String countryCode = quoteInfoMin.getCountryCode();
         List<Country> countryList = countryMap.get(countryCode);
         return CollectionUtils.isNotEmpty(countryList) ? countryList.get(0).getRegionCn() : "";
