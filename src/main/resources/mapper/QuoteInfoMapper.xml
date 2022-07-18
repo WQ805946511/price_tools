@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smarting.price.tools.mapper.QuoteInfoMapper">
+    <select id="getQuoteInfoList" resultType="com.smarting.price.tools.entity.QuoteInfo">
+        SELECT
+        carrier,
+        country_code countryCode,
+        essential_flag essentialFlag,
+        premium_flag premiumFlag,
+        network,
+        ${flowSpecifications} specificationPrice,
+        2G twoG,
+        3G threeG,
+        LTE lte,
+        LTEM ltem,
+        per_roaming perRoaming,
+        price_sms priceSms,
+        price_payg_mrc pricePaygMrc,
+        overstep_meal_1mb overstepMealOneMb,
+        multi_apn apn,
+        delivery_cycle times
+        FROM
+        cost_table
+        WHERE 1 = 1
+        <if test="list != null and list != ''">
+            AND country_code IN
+            <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        AND carrier != 'Syniverse-VF'
+    </select>
+
+    <select id="getQuoteInfoTwoList" resultType="com.smarting.price.tools.entity.QuoteInfo">
+        select DISTINCT region,country_code from cost_table where country_code is not null and country_code != ''
+    </select>
+</mapper>
