@@ -32,6 +32,11 @@ public class EcallService {
         returnObject.put("status", "failed");
         returnObject.put("message", "query result is empty");
         returnObject.put("result", new JSONArray());
+        if (gp == 0) {
+            returnObject.put("message", "query result is empty");
+            return returnObject;
+        }
+
         if (StringUtils.isNotBlank(region)) {
             String join = String.join("", "%", region, "%");
             List<EcallCost> ecallCostList = ecallMapper.getEcallCostListByRegion(join, carrier);
@@ -74,7 +79,7 @@ public class EcallService {
                 jsonBody.put("csEcallFlag", ecallCost.getCsEcallFlag());
                 jsonBody.put("ngEcallFlag", ecallCost.getNgEcallFlag());
                 jsonBody.put("deliveryCycle", ecallCost.getDeliveryCycle());
-                jsonBody.put("usePeriod",ecallCost.getUsePeriod());
+                jsonBody.put("usePeriod", ecallCost.getUsePeriod());
                 jsonBody.put("countryCollect", countryCollect);
 
                 JSONArray jsonArray = new JSONArray();
