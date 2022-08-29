@@ -2,8 +2,8 @@
 <configuration debug="false" scan="false">
 
     <!-- Log file path -->
+<!--    <property name="log.path" value="wangqing/price_tools/logs" />-->
     <property name="log.path" value="/opt/price_tools/logs" />
-
     <!-- Console log output -->
     <appender name="console"
               class="ch.qos.logback.core.ConsoleAppender">

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.smarting.price.tools</groupId>
 	<artifactId>price_tools</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<name>price_tools</name>
 	<description>price_tools</description>
 	<properties>
@@ -58,6 +58,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
 			<version>4.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>5.1.10</version>
 		</dependency>
 	</dependencies>
 

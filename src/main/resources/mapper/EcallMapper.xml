@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smarting.price.tools.mapper.EcallMapper">
+
+    <select id="getEcallCostListByRegion" resultType="com.smarting.price.tools.entity.EcallCost">
+        select *
+        from ecall_cost
+        where carrier = #{carrier}
+          and region like #{region}
+    </select>
+
+
+    <select id="getEcallCostListByCountryCode" resultType="com.smarting.price.tools.entity.EcallCost">
+        select *
+        from ecall_cost
+        where carrier = #{carrier}
+          and country_code = #{countryCode}
+    </select>
+</mapper>
